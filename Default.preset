@@ -1,0 +1,196 @@
+##########
+# W10 Optimisations - adapté par Metaljisawa
+# Source : https://github.com/Disassembler0
+##########
+
+#######################################################################################################################################
+#		Hello !
+#
+#	Avant de commencer à exécuter le script , pour t'éviter de perdre du temps et de me faire perdre le mien
+#	Je te demande de prendre le temps de lire ces quelques consignes !
+#
+#	Le script est fonctionnel sur toutes les versions de Windows 10.
+#	LE SCRIPT EST A MODIFIER EN FONCTION DE L UTILISATION QUE VOUS FAITES DE VOTRE PC , REFLECHISSEZ QUELQUES SECONDES AVANT D'APPLIQUER
+#	Si le script engendre une action non desirée ou que tu te rends compte plus tard qu'un service te manque
+#	il te suffit simplement d'adapter le script à tes besoins.
+#	
+#	Si tu supprimes Xbox par exemple, ligne 173 et que tu te rends compte que ton Forza ou ton Sea Of Thieves ne fonctionne plus
+#	Tu verras ça:
+#	"DisableXboxFeatures",          # "EnableXboxFeatures"
+#
+# 	pour réinstaller Xbox, tu n'as qu'à faire comme suit :
+#
+#	"EnableXboxFeatures",      # "DisableXboxFeatures",
+#
+#	J'ai tout simplement changé le sens. Et ceci est valable pour TOUTES les modifications apportées par ce script.
+#	Une fois la modification effectuée, enregistre ta version du script et recommence l'exécution.
+#
+#	Tout refonctionnera parfaitement !
+#
+#	Enjoy !
+#
+########################################################################################################################################
+
+############  Arguments à copier dans ISE avant de démarrer le script ################
+    ####### Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass #######
+	
+	
+### On s'applique les droits Admin ###
+RequireAdmin
+
+### Vie privée ###
+DisableTelemetry    	        # EnableTelemetry			# Désactive la Télémétrie Windows (Doit être activé pour les Mises à jour Windows) 
+DisableWiFiSense                # EnableWiFiSense			# Permet à Windows de partager vos accès Wifi
+DisableSmartScreen              # EnableSmartScreen			# SmartScreen informe Microsoft de tous les dll et install de logiciels effectués depuis Windows
+#DisableWebSearch               # EnableWebSearch			# Supprime les recherches Bing/Cortana du ménu démarrer // Update 1er Septembre 2019, si Cortana fais chier, à inverser.
+DisableAppSuggestions           # EnableAppSuggestions		# Mouchard Microsoft pour afficher des pubs ofc
+DisableActivityHistory          # EnableActivityHistory		# Désactive l'historique de vos récentes activités 
+DisableBackgroundApps           # EnableBackgroundApps		# Désactive les Applications actives en Arrière-Plan
+DisableLocation                 # EnableLocation			# Supprime la localisation du PC pour enlever les pubs ciblées		
+DisableMapUpdates               # EnableMapUpdates			# Ne pas mettre à jour les Maps préintégrées à Windows
+DisableFeedback                 # EnableFeedback			# Désactive les rapports d'erreurs inutiles sur Windows
+DisableTailoredExperiences      # EnableTailoredExperiences	# Désactive les recommandations Windows
+DisableAdvertisingID            # EnableAdvertisingID		# Désactive les Pubs microfost ciblées
+DisableWebLangList              # EnableWebLangList			# Redirige un site Web vers la langue du Pc, aucun besoin, tout est géré par ton Navigateur
+DisableCortana                  # EnableCortana				# On connaît hein, Fock Cortana
+DisableBiometrics               # EnableBiometrics			# Si désactivé impossible de se connecter via Emprunte/Reco Faciale ou tout autre méthode
+DisableErrorReporting           # EnableErrorReporting		# Désactive les fenêtres d'aide après un crash
+# SetP2PUpdateDisable             # SetP2PUpdateInternet  	# SetP2PUpdateLocal	## Désactive les MAJ local
+DisableDiagTrack                # EnableDiagTrack			# Désactive encore de la collecte de données 
+DisableWAPPush                  # EnableWAPPush				# Désactive les Pushs Web ou de l'app : Mon téléphone
+EnableClearRecentFiles        # DisableClearRecentFile	# Sur enable, l'historique d'utilisation du PC sera enregistrée pour cette session et supprimée à la fin
+DisableRecentFiles            # EnableRecentFiles			# Rend moins intéressante l'utilisation de l'accès rapide
+
+### Sécurité ###
+SetUACLow                       # SetUACHigh				# Désactive la fenêtre d'autorisation avant le lancement d'un .exe
+DisableAdminShares              # EnableAdminShares			# Désactive le partage de certains dossiers du Pc sur le réseau
+DisableSMB1                 	# EnableSMB1				# Protocole d’accès aux partages réseau
+DisableSMBServer               # EnableSMBServer			# A désactiver si vous ne voulez rien partager sur le réseau et que vous n'utilisez pas Dockers ATTENTION
+DisableNetBIOS                  # EnableNetBIOS				# Protocol réseau désuet, ajoutes de la latence sur les call au kernel
+DisableLLMNR                    # EnableLLMNR     			# Mise à jour du protocol du dessus, utile à activer si vous avez besoin d'accéder à un autre PC en local
+DisableNCSIProbe                # EnableNCSIProbe			# Désactive le ping de Windows qui vérifie que vous êtes connecté au net. Réduis les spikes de latence
+DisableConnectionSharing        # EnableConnectionSharing	# Service à réactiver si vous vous servez de votre PC comme HotSpot Wifi
+DisableNetDevicesAutoInst       # EnableNetDevicesAutoInst  # On désactive les mises à jour des périphériques auto par Windows
+DisableFirewall          	    # EnableFirewall			# Pour réduire les latences, à désactiver, je le laisse Off pour éviter de me faire spam pour ceux qui lisent pas
+HideDefenderTrayIcon            # ShowDefenderTrayIcon		# Supprime l'affiche de Defender dans la barre de tâche
+DisableDefender                 # EnableDefender			# Désactive Defender, gros gains de perfs/latences/conso
+DisableDefenderCloud            # EnableDefenderCloud		# Pareil qu'au dessus mais avec échange continu avec les serveurs MC , latence spike
+EnableCtrldFolderAccess         # DisableCtrldFolderAccess	# N'autorise que les apps autorisées à accéder aux dossiers de base Documents/Images/Vidéos etc , secure ++
+DisableCIMemoryIntegrity        # EnableCIMemoryIntegrity 	# Contrôle virtuel de sécurité de l’intégrité de la mémoire je off vu qu'on désactive aussi la Virtualisation 
+DisableDefenderAppGuard         # EnableDefenderAppGuard	# Contrôle virtuel de sécurité je off vu qu'on désactive aussi la Virtualisation 
+HideAccountProtectionWarn       # ShowAccountProtectionWarn # Désactive l'alerte qui veut vous faire vous connecter à votre compte Microsoft
+EnableDotNetStrongCrypto        # DisableDotNetStrongCrypto # Les apps .net tournent dans un environnement plus sécurisé
+EnableMeltdownCompatFlag        # DisableMeltdownCompatFlag # https://www.grc.com/files/InSpectre.exe /!\ écouter le tuto /!\
+EnableF8BootMenu                # DisableF8BootMenu			# Permet d'accéder au Boot menu via F8 au StartUp
+EnableBootRecovery           	# DisableBootRecovery		# Laisse activé le recovery mode. Laisse aussi l'option Réinitialiser ce PC malheuresement mais bon...
+DisableRecoveryAndReset   	    # EnableRecoveryAndReset
+SetDEPOptOut                    # SetDEPOptIn				# Sécurité limittant les attaques sur les plages mémoires
+
+### Service Tweaks ###
+DisableUpdateMSRT               # EnableUpdateMSRT			# Supprime l'outil de suppression de logiciels malveillants (Antivirus obligé si Disable et Novice ou pas sûr de toi)
+DisableUpdateDriver             # EnableUpdateDriver		# Désactive la MAJ des pilotes automatique de Windows , on le fait à la main héhé
+DisableUpdateAutoDownload       # EnableUpdateAutoDownload	# Désactive la MAJ des applications Windows (Laisse la possibilité d'update Windows en lui même) 
+DisableMaintenanceWakeUp        # EnableMaintenanceWakeUp	# On a retiré la veille dans les tutos mais par sécurité on l'empêche de mettre tout à jour si il y passe.
+DisableHomeGroups               # EnableHomeGroups			# Désactivé de base sur W10 , on s'en assure juste
+DisableSharedExperiences        # EnableSharedExperiences	# Désactive les infos partagées Pc/Mobiles 
+EnableClipboardHistory          # DisableClipboardHistory	# Supprime l'historique de vos Copier/Coller , nécessaire vu qu'on c/c nos mdp tout le temps , secure ++
+DisableRemoteAssistance         # EnableRemoteAssistance	# Supprime l'accès à distance intégré à Windows
+DisableRemoteDesktop            # EnableRemoteDesktop		# Rend la connexion au Pc via sa session à distance impossible
+DisableAutoplay                 # EnableAutoplay			# N'execute pas automatiquement le contenu d'un périphérique (Clé usb etc)
+EnableRestorePoints				# DisableRestorePoints		# On se laisse la possibilité de créer des points de sauvegarde
+DisableStorageSense         	# EnableStorageSense		# Nettoyage automatique des fichiers temps etc, Ccleaner le fait bien mieux
+DisableDefragmentation          # EnableDefragmentation		# Il ne faut JAMAIS défragmenter un SSD. Obsolète dans le concept depuis des années
+DisableSuperfetch               # EnableSuperfetch			# Algorithme qui précharge les applications les plus utilisées dans la mémoire vive 
+DisableSwapFile                 # EnableSwapFile			# Swap réservé aux applications Windows . LoL.
+EnableNTFSLongPaths             # DisableNTFSLongPaths		# Autorise la création de dossier avec de longs noms (Fix un soucis sur certains dossiers de temps autogénérés)
+DisableNTFSLastAccess           # EnableNTFSLastAccess		# Empêche d'avoir la date/heure de la dernière ouverture. Réduit la vitesse des disques et c'est useless
+DisableHibernation				# EnableHibernation			# On désactive totalement la veille prolongée
+DisableSleepButton              # EnableSleepButton			# On supprime la possibilité du menu démarré de mettre le Pc en veille
+DisableSleepTimeout             # EnableSleepTimeout		# Soit tu éteins ton PC toi même, soit il s'éteins pas en gros
+DisableFastStartup              # EnableFastStartup			# Supprime le FastBoot de windows qui charge le disque et la ram avant même le boot , LoL.
+DisableAutoRebootOnCrash        # EnableAutoRebootOnCrash	# Si le PC Crash, il laissera l'erreur affichée, pas de reboot automatique /!\ A LIRE /!\ Reboot à la main ofc.
+
+### UI Tweaks ###
+DisableActionCenter             # EnableActionCenter		# Retire certains notifications Windows bien chiantes
+DisableLockScreen               # EnableLockScreen			# Supprime l'affichage de type Smartphone du BackGround de démarrage
+DisableLockScreenRS1            # EnableLockScreenRS1		# Supprime l'affichage de type Smartphone du BackGround de démarrage (W10Anniv)
+ShowNetworkOnLockScreen			# HideNetworkOnLockScreen 	# Affiche l'icône de réseau sur l'écran de démarrage
+ShowShutdownOnLockScreen        # HideShutdownFromLockScreen	# Cache le button d'arrêt sur l'écran de démarrage
+DisableLockScreenBlur           # EnableLockScreenBlur		# Désactive le flou sur l'écran de démarrage
+DisableAeroShake                # EnableAeroShake			# Supprime le fait de secouer une fenêtre avec la souris pour réduire les autres
+DisableAccessibilityKeys        # EnableAccessibilityKeys   # Désactive plusieurs fonctions d’accessibilité du clavier
+ShowTaskManagerDetails          # HideTaskManagerDetails	# Affiche le Gestionnaire de tâche complet de base
+ShowFileOperationsDetails       # HideFileOperationsDetails # Affiche les infos sur les copies/déplacements de fichiers sur Windows
+# EnableFileDeleteConfirm       # DisableFileDeleteConfirm	# A activer si vous souhaitez que la touche Suppr supprime définitivement le contenu sans la corbeille
+HideTaskbarSearch               # ShowTaskbarSearchIcon     ##ShowTaskbarSearchBox	# L’option avec Icon affichera la loupe, Box montrera le champs de recherche entier.
+HideTaskView                    # ShowTaskView				# Supprime le tick de Timeline Windows
+ShowLargeTaskbarIcons           # ShowSmallTaskbarIcons		# Barre des tâches en petit , allège aussi la RAM au boot
+SetTaskbarCombineAlways         # SetTaskbarCombineNever    ##SetTaskbarCombineWhenFull # Si avez plusieurs dossiers ouverts, une seule icône Explorateur combinera (ou pas) toutes vos fenêtres
+HideTaskbarPeopleIcon           # ShowTaskbarPeopleIcon		# Supprime l'affichage du logo People / Contact 
+HideTrayIcons              	    # ShowTrayIcons 			# Affiche toutes les icones de la barre d’outils au lieu du petit Tick
+# DisableSearchAppInStore       # EnableSearchAppInStore	# Supprime l'ouverture de WStore quand une extension inconnue cherche à être ouverte (Update 1er Septembre 2019, si Cortana fais chier, à inverser.)
+DisableNewAppPrompt             # EnableNewAppPrompt		# Pareil qu'au dessus +/-
+ShowRecentlyAddedApps           # HideRecentlyAddedApps		# Affiche les applications récemment installées en haut du ménu démarrer
+HideMostUsedApps                # ShowMostUsedApps			# N'affiche pas les applications les plus utilisées.
+SetControlPanelCategories       # SetControlPanelLargeIcons ##SetControlPanelSmallIcons # Choisis l'affichage par défaut du panneau de configuration 
+EnableShortcutInName            # DisableShortcutInName		# Désactive le fait de voir qu'un Icône est un raccourci dans le nom (Plus propre)
+HideShortcutArrow               # ShowShortcutArrow			# Désactive le fait de voir qu'un Icône est un raccourci sur le visuel (Plus propre)
+SetVisualFXPerformance          # SetVisualFXAppearance		# Gestions des effets visuels de base Windows
+DisableTitleBarColor            # EnableTitleBarColor 		# Empêche la barre de tâche de changer de couleur avec son environnement
+EnableDarkTheme                 # DisableDarkTheme			# Active par défaut le DarkThème 
+RemoveENKeyboard                # AddENKeyboard				# Supprime le raccourci vers le clavier Qwerty
+EnableNumlock                   # DisableNumlock			# Active de base le pavé numérique
+DisableEnhPointerPrecision      # EnableEnhPointerPrecision # Désactive Accélération Souris 
+SetSoundSchemeNone              # SetSoundSchemeDefault		# Supprime les sons d'erreur de Windows
+DisableStartupSound             # EnableStartupSound		# Supprime le son de démarrage de Windows
+DisableChangingSoundScheme      # EnableChangingSoundScheme # Empêche la possibilié de changer le thème de son Windows
+EnableVerboseStatus             # DisableVerboseStatus		# Affiche des informations au démarrage/extinction très intéréssante. A désactiver quand votre Pc est stable si vous voulez
+DisableF1HelpKey                # EnableF1HelpKey			# Supprime l'aide Windows sur F1 au boot
+
+### Explorer UI Tweaks ###
+ShowExplorerTitleFullPath       # HideExplorerTitleFullPath	# Affiche en entier l'URL du dossier dans lequel on se trouve
+ShowKnownExtensions             # HideKnownExtensions		# Affiche les extensions connues
+ShowHiddenFiles                 # HideHiddenFiles			# Affiche les fichiers/dossiers cachés
+# ShowSuperHiddenFiles          # HideSuperHiddenFiles		# Affiche même les fichiers/dossiers vitaux à l'OS ( A vous de voir )
+DisableNavPaneExpand            # EnableNavPaneExpand 		# Permet de mieux gérer l'arborescence dans la naviguation sur Windows
+DisableFldrSeparateProcess      # EnableFldrSeparateProcess # En Disable le processus Explorer.exe est unique, en enable, si Explorer crash, tout le Pc ne crash pas
+DisableRestoreFldrWindows       # EnableRestoreFldrWindows  # Désactive le fait que le PC reboot en rouvrant la ou il s'est arrêté
+ShowEncCompFilesColor           # HideEncCompFilesColor		# Ajoute un code couleur sur les fichiers. Bleu pour les fichiers compressés, vert cryptés etc
+HideSelectCheckboxes            # ShowSelectCheckboxes      # Ajoute une case à cocher pour faire de la multiselection de fichiers pour les actions groupées
+HideSyncNotifications           # ShowSyncNotifications		# Utilisé pour afficher des Pubs encore LoL.
+HideRecentShortcuts             # ShowRecentShortcuts		# N'affiche pas les contenus accédés récemment
+# HideRecycleBinFromDesktop     # ShowRecycleBinOnDesktop	# Cacher la Corbeille du Bureau
+EnableThumbnails            	# DisableThumbnails			# Affiche les images en petit sur les fichiers/photos
+DisableThumbnailCache           # EnableThumbnailCache		# Désactive le cache des miniatures 
+DisableThumbsDBOnNetwork        # EnableThumbsDBOnNetwork	# Désactive le cache des miniatures en rapport avec le réseau
+
+### Application Tweaks ###
+DisableOneDrive                 # EnableOneDrive			# Désactive OneDrive	
+UninstallOneDrive               # InstallOneDrive			# Désinstalle OneDrive
+UninstallMsftBloat              # InstallMsftBloat			# Supprime les jeux pré-installées de Windows
+UninstallThirdPartyBloat        # InstallThirdPartyBloat	# Désinstalle les applis pré-installés de Windows
+# UninstallWindowsStore         # InstallWindowsStore		# Supprime le WindowsStore. Je conseille de le supprimer si vous ne l'utilisez pas
+# DisableXboxFeatures           # EnableXboxFeatures		# Supprime les fonctionnalités Xbox. Utile pour GTA/Forza etc , attention.
+DisableFullscreenOptims         # EnableFullscreenOptims	# Désactive les optimisations de plein écran
+DisableAdobeFlash               # EnableAdobeFlash			# Désactive Adbode Flash Player automatiquement
+DisableEdgePreload              # EnableEdgePreload			# Désactive le préchargement de Edge au démarrage vu qu'on l'utilise pas 
+DisableEdgeShortcutCreation     #EnableEdgeShortcutCreation # Supprime le raccourci de Edge
+DisableIEFirstRun               # EnableIEFirstRun			# Empêche le questionnaire au premier lancement de Edge
+DisableFirstLogonAnimation      # EnableFirstLogonAnimation # Désactive l'animation du premier démarrage ou après mise à jour
+DisableMediaSharing             # EnableMediaSharing		# Désactive le partage de média
+# UninstallMediaPlayer          # InstallMediaPlayer		# Supprime Media Player. Nécessaire pour GTA5 attention à la suppression si vous y jouez
+UninstallInternetExplorer       # InstallInternetExplorer	# Supprime Internet Explorer
+UninstallWorkFolders            # InstallWorkFolders		# Supprime les dossiers partagés et synchronisés en réseau local et via internet
+UninstallPowerShellV2           # InstallPowerShellV2		# Supprime cette ancienne version de PowerShell
+AddPhotoViewerOpenWith          # RemovePhotoViewerOpenWith # Ajoute une option Ouvrir Avec sur les photos
+RemoveFaxPrinter                # AddFaxPrinter				# Supprime la prise en charge des Fax
+UninstallFaxAndScan             # InstallFaxAndScan			# Supprime la prise en charge native du Fax et des scans. Les logiciles fabricants font le taff
+
+
+### Unpinning ###
+#UnpinStartMenuTiles										# Supprime les tuiles épinglées du menu démarrer ( Pas de retour arrière )
+#UnpinTaskbarIcons											# Supprime les icônes ancrées dans la barre de tâche
+
+### Auxiliary Functions ###
+WaitForKey
+Restart
