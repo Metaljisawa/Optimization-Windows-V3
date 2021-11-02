@@ -43,153 +43,153 @@ DisableTelemetry    	        # EnableTelemetry			# Disable Windows Telemetry (Mu
 DisableWiFiSense                # EnableWiFiSense			# Allows Windows to share your WIFI access
 DisableSmartScreen              # EnableSmartScreen			# SmartScreen informs Microsoft of all dlls and software installs made from Windows
 #DisableWebSearch               # EnableWebSearch			# Remove Bing/Cortana searches from the start menu //Update September 1, 2021, if Cortana sucks, reverse it.
-DisableAppSuggestions           # EnableAppSuggestions		# Microsoft bug to display ads ofc
-DisableActivityHistory          # EnableActivityHistory		# Disable your recent activity history
-DisableBackgroundApps           # EnableBackgroundApps		# Disables active applications in the background
+DisableAppSuggestions           # EnableAppSuggestions			# Microsoft bug to display ads ofc
+DisableActivityHistory          # EnableActivityHistory			# Disable your recent activity history
+DisableBackgroundApps           # EnableBackgroundApps			# Disables active applications in the background
 DisableLocation                 # EnableLocation			# Remove PC location to remove targeted ads	
 DisableMapUpdates               # EnableMapUpdates			# Do not update Maps pre-integrated with Windows
 DisableFeedback                 # EnableFeedback			# Disable unnecessary error reports on Windows
-DisableTailoredExperiences      # EnableTailoredExperiences	# Disable Windows recommandations
-DisableAdvertisingID            # EnableAdvertisingID		# Disable targeted microsoft ads
+DisableTailoredExperiences      # EnableTailoredExperiences		# Disable Windows recommandations
+DisableAdvertisingID            # EnableAdvertisingID			# Disable targeted microsoft ads
 DisableWebLangList              # EnableWebLangList			# Redirect a website to the language of the PC, no need, everything is managed by your browser
 DisableCortana                  # EnableCortana				# Fuck Cortana
 DisableBiometrics               # EnableBiometrics			# If disabled, unable to connect via Borrow/Reco Facial or any other method
-DisableErrorReporting           # EnableErrorReporting		# Disable help Windows after a crash
-# SetP2PUpdateDisable             # SetP2PUpdateInternet  	# SetP2PUpdateLocal	## Disable local updates
+DisableErrorReporting           # EnableErrorReporting			# Disable help Windows after a crash
+# SetP2PUpdateDisable           # SetP2PUpdateInternet  		# SetP2PUpdateLocal	## Disable local updates
 DisableDiagTrack                # EnableDiagTrack			# Disables data collection again
 DisableWAPPush                  # EnableWAPPush				# Disable Web or app pushes : My Phone
-EnableClearRecentFiles        # DisableClearRecentFile	# On Enable, the PC usage history will be recorded for that session and deleted at the end
-DisableRecentFiles            # EnableRecentFiles			# Makes it less interesting to use the quick access
+EnableClearRecentFiles        	# DisableClearRecentFile		# On Enable, the PC usage history will be recorded for that session and deleted at the end
+DisableRecentFiles           	 # EnableRecentFiles			# Makes it less interesting to use the quick access
 
 ### Security ###
 SetUACLow                       # SetUACHigh				# Disables the authorization window before launching an .exe
 DisableAdminShares              # EnableAdminShares			# Disables sharing of certain PC folders over the network
 DisableSMB1                 	# EnableSMB1				# Network share access protocol
-DisableSMBServer               # EnableSMBServer			# Disable if you don't want to share anything on the network and you don't use Dockers CAUTION !
+DisableSMBServer              	# EnableSMBServer			# Disable if you don't want to share anything on the network and you don't use Dockers CAUTION !
 DisableNetBIOS                  # EnableNetBIOS				# Outdated network protocol, adds latency to kernel calls
 DisableLLMNR                    # EnableLLMNR     			# Top protocol update, useful to activate if you need to access another PC locally
 DisableNCSIProbe                # EnableNCSIProbe			# Disables the Windows ping that checks if you are connected to the net. Reduces latency spikes
-DisableConnectionSharing        # EnableConnectionSharing	# Service to be reactivated if you use your PC as a Wifi HotSpot
-DisableNetDevicesAutoInst       # EnableNetDevicesAutoInst  # Disable auto device updates by Windows
-DisableFirewall          	    # EnableFirewall			# To reduce latencies, to deactivate, I leave it OFF to avoid spamming for those who do not read
-HideDefenderTrayIcon            # ShowDefenderTrayIcon		# Removes the Defender poster in the taskbar
+DisableConnectionSharing        # EnableConnectionSharing		# Service to be reactivated if you use your PC as a Wifi HotSpot
+DisableNetDevicesAutoInst       # EnableNetDevicesAutoInst 		# Disable auto device updates by Windows
+DisableFirewall          	# EnableFirewall			# To reduce latencies, to deactivate, I leave it OFF to avoid spamming for those who do not read
+HideDefenderTrayIcon            # ShowDefenderTrayIcon			# Removes the Defender poster in the taskbar
 DisableDefender                 # EnableDefender			# Disable Defender, big gains in performance/latency/consumtion
-DisableDefenderCloud            # EnableDefenderCloud		# Same as above but with continuous exchange with MC servers, spike latency
-EnableCtrldFolderAccess         # DisableCtrldFolderAccess	# Allow only authorized apps to access the basic folders Documents/Images/Videos etc, secure ++
-DisableCIMemoryIntegrity        # EnableCIMemoryIntegrity 	# Virtual security control of the integrity of the memory I off seen that we disable also the Virtualization
-DisableDefenderAppGuard         # EnableDefenderAppGuard	# Virtual security control I off since we also deactivate the Virtualization
-HideAccountProtectionWarn       # ShowAccountProtectionWarn # Disable the alert that wants you to log in to your Microsoft account
-EnableDotNetStrongCrypto        # DisableDotNetStrongCrypto # .net apps run in a more secure environment
-EnableMeltdownCompatFlag        # DisableMeltdownCompatFlag # https://www.grc.com/files/InSpectre.exe CAUTION
+DisableDefenderCloud            # EnableDefenderCloud			# Same as above but with continuous exchange with MC servers, spike latency
+EnableCtrldFolderAccess         # DisableCtrldFolderAccess		# Allow only authorized apps to access the basic folders Documents/Images/Videos etc, secure ++
+DisableCIMemoryIntegrity        # EnableCIMemoryIntegrity 		# Virtual security control of the integrity of the memory I off seen that we disable also the Virtualization
+DisableDefenderAppGuard         # EnableDefenderAppGuard		# Virtual security control I off since we also deactivate the Virtualization
+HideAccountProtectionWarn       # ShowAccountProtectionWarn 		# Disable the alert that wants you to log in to your Microsoft account
+EnableDotNetStrongCrypto        # DisableDotNetStrongCrypto 		# .net apps run in a more secure environment
+EnableMeltdownCompatFlag        # DisableMeltdownCompatFlag 		# https://www.grc.com/files/InSpectre.exe CAUTION
 EnableF8BootMenu                # DisableF8BootMenu			# Allows access to the Boot menu via F8 at StartUp
-EnableBootRecovery           	# DisableBootRecovery		# Leave recovery mode enabled. Also leaves the option Reset this PC unfortunately...
-DisableRecoveryAndReset   	    # EnableRecoveryAndReset
+EnableBootRecovery           	# DisableBootRecovery			# Leave recovery mode enabled. Also leaves the option Reset this PC unfortunately...
+DisableRecoveryAndReset   	# EnableRecoveryAndReset
 SetDEPOptOut                    # SetDEPOptIn				# Security limiting attecks on memory ranges
 
 ### Service Tweaks ###
 DisableUpdateMSRT               # EnableUpdateMSRT			# Remove the malware removal tool (Antivirus required if Disable and Novice or not sure of yourself)
-DisableUpdateDriver             # EnableUpdateDriver		# Deactivate the update of the automatic drivers of Windows, we do it by hand
-DisableUpdateAutoDownload       # EnableUpdateAutoDownload	# Disable the update of Windows applications (leaves the possibility to update Windows itself)
-DisableMaintenanceWakeUp        # EnableMaintenanceWakeUp	# We have removed the day before in the tutorials but for security we prevent it from updating everything if it passes there
+DisableUpdateDriver             # EnableUpdateDriver			# Deactivate the update of the automatic drivers of Windows, we do it by hand
+DisableUpdateAutoDownload       # EnableUpdateAutoDownload		# Disable the update of Windows applications (leaves the possibility to update Windows itself)
+DisableMaintenanceWakeUp        # EnableMaintenanceWakeUp		# We have removed the day before in the tutorials but for security we prevent it from updating everything if it passes there
 DisableHomeGroups               # EnableHomeGroups			# Deactivated on Windows 10, we just make sure
-DisableSharedExperiences        # EnableSharedExperiences	# Disable PC/Mobile shared info
-EnableClipboardHistory          # DisableClipboardHistory	# Delete the history of your Copy/Paste, necessary since we c/c our password all the time, secure++
-DisableRemoteAssistance         # EnableRemoteAssistance	# Removes the remote access built into Windows
-DisableRemoteDesktop            # EnableRemoteDesktop		# Makes it impossible to connect to the PC via its remote session
+DisableSharedExperiences        # EnableSharedExperiences		# Disable PC/Mobile shared info
+EnableClipboardHistory          # DisableClipboardHistory		# Delete the history of your Copy/Paste, necessary since we c/c our password all the time, secure++
+DisableRemoteAssistance         # EnableRemoteAssistance		# Removes the remote access built into Windows
+DisableRemoteDesktop            # EnableRemoteDesktop			# Makes it impossible to connect to the PC via its remote session
 DisableAutoplay                 # EnableAutoplay			# Does not automatically execute the contents of a device (USB key etc)
-EnableRestorePoints				# DisableRestorePoints		# We leave ourselves the possibility of creating backup points
-DisableStorageSense         	# EnableStorageSense		# Automatic cleaning of time files etc, Ccleaner does it much better
-DisableDefragmentation          # EnableDefragmentation		# You should NEVER defragment an SSD. Obsolete in concept for years
+EnableRestorePoints		# DisableRestorePoints			# We leave ourselves the possibility of creating backup points
+DisableStorageSense         	# EnableStorageSense			# Automatic cleaning of time files etc, Ccleaner does it much better
+DisableDefragmentation          # EnableDefragmentation			# You should NEVER defragment an SSD. Obsolete in concept for years
 DisableSuperfetch               # EnableSuperfetch			# Algorithm that preloads the most used applications into RAM
 DisableSwapFile                 # EnableSwapFile			# Swap for Windows applications only
-EnableNTFSLongPaths             # DisableNTFSLongPaths		# Allow the creation of folders with long names (Fix a problem on some autogenerated time folders)
-DisableNTFSLastAccess           # EnableNTFSLastAccess		# Prevents to have the date/time of the last opening. Reduces the speed of the discs and it's useless
-DisableHibernation				# EnableHibernation			# Hibernation is completely deactivated
+EnableNTFSLongPaths             # DisableNTFSLongPaths			# Allow the creation of folders with long names (Fix a problem on some autogenerated time folders)
+DisableNTFSLastAccess           # EnableNTFSLastAccess			# Prevents to have the date/time of the last opening. Reduces the speed of the discs and it's useless
+DisableHibernation		# EnableHibernation			# Hibernation is completely deactivated
 DisableSleepButton              # EnableSleepButton			# The possibility of putting the PC in standby mode from the start menu is removed
-DisableSleepTimeout             # EnableSleepTimeout		# Either you turn off your PC yourself, or it doesn't turn off at all
+DisableSleepTimeout             # EnableSleepTimeout			# Either you turn off your PC yourself, or it doesn't turn off at all
 DisableFastStartup              # EnableFastStartup			# Removes the FastBoot of windows which loads the disk and the ram even before the boot
-DisableAutoRebootOnCrash        # EnableAutoRebootOnCrash	# If the PC crashes, it will leave the error displayed, no automatic reboot |READ| Reboot by hand ofc
+DisableAutoRebootOnCrash        # EnableAutoRebootOnCrash		# If the PC crashes, it will leave the error displayed, no automatic reboot |READ| Reboot by hand ofc
 
 ### UI Tweaks ###
-DisableActionCenter             # EnableActionCenter		# Remove some annoying Windows notifications
+DisableActionCenter             # EnableActionCenter			# Remove some annoying Windows notifications
 DisableLockScreen               # EnableLockScreen			# Removes the Smartphone-like display from the Startup Background
-DisableLockScreenRS1            # EnableLockScreenRS1		# Removes the Smartphone-like display from the Startup Background (W10Anniv)
-ShowNetworkOnLockScreen			# HideNetworkOnLockScreen 	# Displays the entwork icon on the startup screen
-ShowShutdownOnLockScreen        # HideShutdownFromLockScreen	# Hides the stop button on the start screen
-DisableLockScreenBlur           # EnableLockScreenBlur		# Disable the blur on the start screen
+DisableLockScreenRS1            # EnableLockScreenRS1			# Removes the Smartphone-like display from the Startup Background (W10Anniv)
+ShowNetworkOnLockScreen		# HideNetworkOnLockScreen 		# Displays the entwork icon on the startup screen
+ShowShutdownOnLockScreen        # HideShutdownFromLockScreen		# Hides the stop button on the start screen
+DisableLockScreenBlur           # EnableLockScreenBlur			# Disable the blur on the start screen
 DisableAeroShake                # EnableAeroShake			# Removes shaking a window with the mouse to minimize others
-DisableAccessibilityKeys        # EnableAccessibilityKeys   # Disables several keyboard accessibility features
-ShowTaskManagerDetails          # HideTaskManagerDetails	# Displays the full basic Task Manager
-ShowFileOperationsDetails       # HideFileOperationsDetails # Displays info on file copies/moves on Windows
-# EnableFileDeleteConfirm       # DisableFileDeleteConfirm	# To be activated if you want the Delete key to permanently delte the content without the recycle garbage can
+DisableAccessibilityKeys        # EnableAccessibilityKeys   		# Disables several keyboard accessibility features
+ShowTaskManagerDetails          # HideTaskManagerDetails		# Displays the full basic Task Manager
+ShowFileOperationsDetails       # HideFileOperationsDetails 		# Displays info on file copies/moves on Windows
+# EnableFileDeleteConfirm       # DisableFileDeleteConfirm		# To be activated if you want the Delete key to permanently delte the content without the recycle garbage can
 HideTaskbarSearch               # ShowTaskbarSearchIcon     ##ShowTaskbarSearchBox	# The option with icon will display the magnifying glass, Box will show the whole search field
 HideTaskView                    # ShowTaskView				# Removes the tick from Windows Timeline
-ShowLargeTaskbarIcons           # ShowSmallTaskbarIcons		# Small taskbar, also lightens RAM at boot time
+ShowLargeTaskbarIcons           # ShowSmallTaskbarIcons			# Small taskbar, also lightens RAM at boot time
 SetTaskbarCombineAlways         # SetTaskbarCombineNever    ##SetTaskbarCombineWhenFull # If you have several folders open, a single Explorer icon will combine (or not) all your windows
-HideTaskbarPeopleIcon           # ShowTaskbarPeopleIcon		# Suppresses the display of the People/Contact logo
-HideTrayIcons              	    # ShowTrayIcons 			# Displays all toolbar icons instead of the small Tick
-# DisableSearchAppInStore       # EnableSearchAppInStore	# Suppresses the opening of Windows Store when an unknow entension tries to be opened (Update September 1, 2019, if Cortana sucks to be reversed)
-DisableNewAppPrompt             # EnableNewAppPrompt		# Same as upside
-ShowRecentlyAddedApps           # HideRecentlyAddedApps		# Displays recently installed applications at the top of the Start menu
+HideTaskbarPeopleIcon           # ShowTaskbarPeopleIcon			# Suppresses the display of the People/Contact logo
+HideTrayIcons              	# ShowTrayIcons 			# Displays all toolbar icons instead of the small Tick
+# DisableSearchAppInStore       # EnableSearchAppInStore		# Suppresses the opening of Windows Store when an unknow entension tries to be opened (Update September 1, 2019, if Cortana sucks to be reversed)
+DisableNewAppPrompt             # EnableNewAppPrompt			# Same as upside
+ShowRecentlyAddedApps           # HideRecentlyAddedApps			# Displays recently installed applications at the top of the Start menu
 HideMostUsedApps                # ShowMostUsedApps			# Doesn't display the most used applications
 SetControlPanelCategories       # SetControlPanelLargeIcons ##SetControlPanelSmallIcons # Choose the default view of the control panel
-EnableShortcutInName            # DisableShortcutInName		# Disables seeing that an Icon is a shortcut in the name (cleaner)
+EnableShortcutInName            # DisableShortcutInName			# Disables seeing that an Icon is a shortcut in the name (cleaner)
 HideShortcutArrow               # ShowShortcutArrow			# Disables the fact thant an Icon is a shortcut on the visual (Cleaner)
-SetVisualFXPerformance          # SetVisualFXAppearance		# Management of basic Windows visual effects
-DisableTitleBarColor            # EnableTitleBarColor 		# Prevents the taskbar from changing color with environment
+SetVisualFXPerformance          # SetVisualFXAppearance			# Management of basic Windows visual effects
+DisableTitleBarColor            # EnableTitleBarColor 			# Prevents the taskbar from changing color with environment
 EnableDarkTheme                 # DisableDarkTheme			# Activated by default the Dark Theme 
 RemoveENKeyboard                # AddENKeyboard				# Remove the shortcut to the QWERTY keyboard
 EnableNumlock                   # DisableNumlock			# Activate by default the NumPad
-DisableEnhPointerPrecision      # EnableEnhPointerPrecision # Disable Mouse Acceleration
-SetSoundSchemeNone              # SetSoundSchemeDefault		# Removes error sounds from Windows
-DisableStartupSound             # EnableStartupSound		# Removes the Windows startup sound
-DisableChangingSoundScheme      # EnableChangingSoundScheme # Prevents the possiblity to change the theme of your Windows
-EnableVerboseStatus             # DisableVerboseStatus		# Displays very interesting information at startup/shutdown. Disable when your PC is stable if you want
+DisableEnhPointerPrecision      # EnableEnhPointerPrecision 		# Disable Mouse Acceleration
+SetSoundSchemeNone              # SetSoundSchemeDefault			# Removes error sounds from Windows
+DisableStartupSound             # EnableStartupSound			# Removes the Windows startup sound
+DisableChangingSoundScheme      # EnableChangingSoundScheme 		# Prevents the possiblity to change the theme of your Windows
+EnableVerboseStatus             # DisableVerboseStatus			# Displays very interesting information at startup/shutdown. Disable when your PC is stable if you want
 DisableF1HelpKey                # EnableF1HelpKey			# Removes Windows help on F1 at boot time
 
 ### Explorer UI Tweaks ###
-ShowExplorerTitleFullPath       # HideExplorerTitleFullPath	# Affiche en entier l'URL du dossier dans lequel on se trouve
-ShowKnownExtensions             # HideKnownExtensions		# Affiche les extensions connues
-ShowHiddenFiles                 # HideHiddenFiles			# Affiche les fichiers/dossiers cachés
-# ShowSuperHiddenFiles          # HideSuperHiddenFiles		# Affiche même les fichiers/dossiers vitaux à l'OS ( A vous de voir )
-DisableNavPaneExpand            # EnableNavPaneExpand 		# Permet de mieux gérer l'arborescence dans la naviguation sur Windows
-DisableFldrSeparateProcess      # EnableFldrSeparateProcess # En Disable le processus Explorer.exe est unique, en enable, si Explorer crash, tout le Pc ne crash pas
-DisableRestoreFldrWindows       # EnableRestoreFldrWindows  # Désactive le fait que le PC reboot en rouvrant la ou il s'est arrêté
-ShowEncCompFilesColor           # HideEncCompFilesColor		# Ajoute un code couleur sur les fichiers. Bleu pour les fichiers compressés, vert cryptés etc
-HideSelectCheckboxes            # ShowSelectCheckboxes      # Ajoute une case à cocher pour faire de la multiselection de fichiers pour les actions groupées
-HideSyncNotifications           # ShowSyncNotifications		# Utilisé pour afficher des Pubs encore LoL.
-HideRecentShortcuts             # ShowRecentShortcuts		# N'affiche pas les contenus accédés récemment
-# HideRecycleBinFromDesktop     # ShowRecycleBinOnDesktop	# Cacher la Corbeille du Bureau
-EnableThumbnails            	# DisableThumbnails			# Affiche les images en petit sur les fichiers/photos
-DisableThumbnailCache           # EnableThumbnailCache		# Désactive le cache des miniatures 
-DisableThumbsDBOnNetwork        # EnableThumbsDBOnNetwork	# Désactive le cache des miniatures en rapport avec le réseau
+ShowExplorerTitleFullPath       # HideExplorerTitleFullPath		#Displays the entire URL of the folder you're in
+ShowKnownExtensions             # HideKnownExtensions			# Displays the known extensions
+ShowHiddenFiles                 # HideHiddenFiles			# Displays the hiddens folders/files
+# ShowSuperHiddenFiles          # HideSuperHiddenFiles			# Displays even the files/folders vital to the OS (it's up to you)
+DisableNavPaneExpand            # EnableNavPaneExpand 			# Allows to better manage the tree structure in the Windows navigation
+DisableFldrSeparateProcess      # EnableFldrSeparateProcess 		# In Disable the Explorer.exe process is unique, in enable, if Explorer crashes, the whole PC doesn't crash
+DisableRestoreFldrWindows       # EnableRestoreFldrWindows  		# Disables the PC to reboot when reopening where it stopped
+ShowEncCompFilesColor           # HideEncCompFilesColor			# Adds a color code to the files. Blue for compressed files, green for encrypted files, etc
+HideSelectCheckboxes            # ShowSelectCheckboxes      		# Adds a checkbox to do multi-selection of files for grouped actions
+HideSyncNotifications           # ShowSyncNotifications			# Used to display ads again
+HideRecentShortcuts             # ShowRecentShortcuts			# Doesn't display recently accessed content
+# HideRecycleBinFromDesktop     # ShowRecycleBinOnDesktop		# Hide the garbage can on the Desktop
+EnableThumbnails            	# DisableThumbnails			# Displays small images on the files/photos
+DisableThumbnailCache           # EnableThumbnailCache			# Disable thumbnail cache 
+DisableThumbsDBOnNetwork        # EnableThumbsDBOnNetwork		# Disable network-related thumbnail cache
 
 ### Application Tweaks ###
-DisableOneDrive                 # EnableOneDrive			# Désactive OneDrive	
-UninstallOneDrive               # InstallOneDrive			# Désinstalle OneDrive
-UninstallMsftBloat              # InstallMsftBloat			# Supprime les jeux pré-installées de Windows
-UninstallThirdPartyBloat        # InstallThirdPartyBloat	# Désinstalle les applis pré-installés de Windows
-# UninstallWindowsStore         # InstallWindowsStore		# Supprime le WindowsStore. Je conseille de le supprimer si vous ne l'utilisez pas
-# DisableXboxFeatures           # EnableXboxFeatures		# Supprime les fonctionnalités Xbox. Utile pour GTA/Forza etc , attention.
-DisableFullscreenOptims         # EnableFullscreenOptims	# Désactive les optimisations de plein écran
-DisableAdobeFlash               # EnableAdobeFlash			# Désactive Adbode Flash Player automatiquement
-DisableEdgePreload              # EnableEdgePreload			# Désactive le préchargement de Edge au démarrage vu qu'on l'utilise pas 
-DisableEdgeShortcutCreation     #EnableEdgeShortcutCreation # Supprime le raccourci de Edge
-DisableIEFirstRun               # EnableIEFirstRun			# Empêche le questionnaire au premier lancement de Edge
-DisableFirstLogonAnimation      # EnableFirstLogonAnimation # Désactive l'animation du premier démarrage ou après mise à jour
-DisableMediaSharing             # EnableMediaSharing		# Désactive le partage de média
-# UninstallMediaPlayer          # InstallMediaPlayer		# Supprime Media Player. Nécessaire pour GTA5 attention à la suppression si vous y jouez
-UninstallInternetExplorer       # InstallInternetExplorer	# Supprime Internet Explorer
-UninstallWorkFolders            # InstallWorkFolders		# Supprime les dossiers partagés et synchronisés en réseau local et via internet
-UninstallPowerShellV2           # InstallPowerShellV2		# Supprime cette ancienne version de PowerShell
-AddPhotoViewerOpenWith          # RemovePhotoViewerOpenWith # Ajoute une option Ouvrir Avec sur les photos
-RemoveFaxPrinter                # AddFaxPrinter				# Supprime la prise en charge des Fax
-UninstallFaxAndScan             # InstallFaxAndScan			# Supprime la prise en charge native du Fax et des scans. Les logiciles fabricants font le taff
+DisableOneDrive                 # EnableOneDrive			# Disable OneDrive	
+UninstallOneDrive               # InstallOneDrive			# Uninstall OneDrive
+UninstallMsftBloat              # InstallMsftBloat			# Removes pre-installed games from Windows
+UninstallThirdPartyBloat        # InstallThirdPartyBloat		# Uninstall pre-install Windows applications
+# UninstallWindowsStore         # InstallWindowsStore			# Delete the WindowsStore. I advice to delete it if you don't use it ofc
+# DisableXboxFeatures           # EnableXboxFeatures			# Removes Xbox features. Useful for GTA/Forza etc, be careful.
+DisableFullscreenOptims         # EnableFullscreenOptims		# Disable full screen optimizations
+DisableAdobeFlash               # EnableAdobeFlash			# Disable Adobe Flash Player automatically
+DisableEdgePreload              # EnableEdgePreload			# Disable Edge preloading at startup since isn't used
+DisableEdgeShortcutCreation     #EnableEdgeShortcutCreation 		# Delete the Edge shortcut
+DisableIEFirstRun               # EnableIEFirstRun			# Prevents the questionnary on first launch of Edge
+DisableFirstLogonAnimation      # EnableFirstLogonAnimation 		# Disable animation on first boot or after update
+DisableMediaSharing             # EnableMediaSharing			# Disable media sharing
+# UninstallMediaPlayer          # InstallMediaPlayer			# Remove Media Player. Necessary for GTA5, beware of deletation if you play it
+UninstallInternetExplorer       # InstallInternetExplorer		# Delete Internet Explorer
+UninstallWorkFolders            # InstallWorkFolders			# Removes shared and synchronized folders on local network and via internet
+UninstallPowerShellV2           # InstallPowerShellV2			# Remove this old version of PowerShell
+AddPhotoViewerOpenWith          # RemovePhotoViewerOpenWith 		# Adds an Open With option to photos
+RemoveFaxPrinter                # AddFaxPrinter				# Removes support for fax
+UninstallFaxAndScan             # InstallFaxAndScan			# Removes native support for fax and scans. Software manufacturers do the job.
 
 
 ### Unpinning ###
-#UnpinStartMenuTiles										# Supprime les tuiles épinglées du menu démarrer ( Pas de retour arrière )
-#UnpinTaskbarIcons											# Supprime les icônes ancrées dans la barre de tâche
+#UnpinStartMenuTiles							# Removes pinned tiles from the start menu (no backspace
+#UnpinTaskbarIcons							# Removes docked icons from the taskbar
 
 ### Auxiliary Functions ###
 WaitForKey
