@@ -5,7 +5,7 @@ Short script ps1 for remove the unnecessary part on Windows 10.
 # Warning !
 
 I do not take responsibility for what may happen to your system. This is at your own risk.
-Think to check the Ninite app part (programm that make you install automatically few programms) and adapt it to what you need/use/want.
+Think to adapt it to what you need/use/want.
 
 # How to run the OptimizationWindowsV3.ps1 file :
 
