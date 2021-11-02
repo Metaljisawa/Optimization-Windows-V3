@@ -1,5 +1,5 @@
 ##########
-# W10 Optimisations - adapté par Metaljisawa
+# W10 Optimizations - adapted by Metaljisawa
 # Source : https://github.com/Disassembler0
 ##########
 
@@ -2309,7 +2309,7 @@ Function UnpinStartMenuTiles {
 
 # Unpin all Taskbar icons - Note: This function has no counterpart. You have to pin the icons back manually.
 Function UnpinTaskbarIcons {
-	Write-Output "Desepingle les icones enregistres dans la barre de taches"
+	Write-Output "Unpin saved icons in the search bar"
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" -Name "Favorites" -Type Binary -Value ([byte[]](255))
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" -Name "FavoritesResolve" -ErrorAction SilentlyContinue
 }
@@ -2325,12 +2325,12 @@ Function UnpinTaskbarIcons {
 ##########
 
 Function WaitForKey {
-	Write-Output "`nAppuye sur une touche pour reboot le Pc directement..."
+	Write-Output "Press a key for reboot the Pc directly..."
 	[Console]::ReadKey($true) | Out-Null
 }
 
 Function Restart {
-	Write-Output "Le Pc va reboot..."
+	Write-Output "The PC is gonna reboot..."
 	Restart-Computer
 }
 
