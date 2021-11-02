@@ -10,7 +10,7 @@ Think to adapt it to what you need/use/want.
 # How to run the OptimizationWindowsV3.ps1 file :
 
   1. Download the .zip file on the main page of the github and extract the .zip file to your desired location.
-  2. Once extracted, open PowerShell ISE as an Administrator (Really important).
+  2. Once extracted, open Default.preset in PowerShell ISE as an Administrator (Really important).
   3. Read all the functions proposed by the script and adapt them according to your needs.
   4. Press F5 when you're ready to launch the script for execute it.
 
