@@ -1603,7 +1603,7 @@ Function EnableF1HelpKey {
 ##########
 
 Function ShowExplorerTitleFullPath {
-	Write-Output "Affiche tout le chemin d acces dans la barre d URL windows..."
+	Write-Output "Displays the entire path in the windows URL bar..."
 	If (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState")) {
 		New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" -Force | Out-Null
 	}
@@ -1611,17 +1611,17 @@ Function ShowExplorerTitleFullPath {
 }
 
 Function HideExplorerTitleFullPath {
-	Write-Output "Cache tout le chemin d acces dans la barre d URL windows..."
+	Write-Output "Hides the entire path in the windows URL bar..."
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" -Name "FullPath" -ErrorAction SilentlyContinue
 }
 
 Function ShowKnownExtensions {
-	Write-Output "Affiche les extensions connues..."
+	Write-Output "Displays the known extensions..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Type DWord -Value 0
 }
 
 Function HideKnownExtensions {
-	Write-Output "Cache les extensions connues..."
+	Write-Output "Hides the known extensions..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Type DWord -Value 1
 }
 
@@ -1631,104 +1631,104 @@ Function ShowHiddenFiles {
 }
 
 Function HideHiddenFiles {
-	Write-Output "Cache les fichiers caches..."
+	Write-Output "Hide hidden files..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Hidden" -Type DWord -Value 2
 }
 
 Function ShowSuperHiddenFiles {
-	Write-Output "Afficher les fichiers proteges par le system..."
+	Write-Output "Show files protected by the system..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSuperHidden" -Type DWord -Value 1
 }
 
 Function HideSuperHiddenFiles {
-	Write-Output "Cacher les fichiers proteges par le system..."
+	Write-Output "Hide files protected by the system..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSuperHidden" -Type DWord -Value 0
 }
 
 Function EnableNavPaneExpand {
-	Write-Output "Activer l affichage reactif de la naviguation..."
+	Write-Output "Enable the reactive display of the navigation..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "NavPaneExpandToCurrentFolder" -Type DWord -Value 1
 }
 
 Function DisableNavPaneExpand {
-	Write-Output "Desactive Activer l affichage reactif de la naviguation..."
+	Write-Output "Disable the reactive display of the navigation..."
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "NavPaneExpandToCurrentFolder" -ErrorAction SilentlyContinue
 }
 
 Function EnableFldrSeparateProcess {
-	Write-Output "Lancer les dossiers Windows dans differents processus sur Windows..."
+	Write-Output "Launching Windows folders in different processes on Windows..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "SeparateProcess" -Type DWord -Value 1
 }
 
 Function DisableFldrSeparateProcess {
-	Write-Output "Desactive le fait que les dossiers Windows se lancent dans differents processus sur Windows..."
+	Write-Output "Disables Windows folders to run in different processes on Windows..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "SeparateProcess" -Type DWord -Value 0
 }
 
 Function EnableRestoreFldrWindows {
-	Write-Output "Active la restauration des anciens dossiers au demarrage..."
+	Write-Output "Enable restoration of old files at startup..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "PersistBrowsers" -Type DWord -Value 1
 }
 
 Function DisableRestoreFldrWindows {
-	Write-Output "Desactive la restauration des anciens dossiers au demarrage..."
+	Write-Output "Disable restoration of old files at startup..."
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "PersistBrowsers" -ErrorAction SilentlyContinue
 }
 
 Function ShowEncCompFilesColor {
-	Write-Output "Colore les fichiers/dossiers en fonctione de leurs type..."
+	Write-Output "Color the files/folders according to their type..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowEncryptCompressedColor" -Type DWord -Value 1
 }
 
 Function HideEncCompFilesColor {
-	Write-Output "Enleve les couleurs des fichiers/dossiers en fonctione de leurs type..."
+	Write-Output "Remove colors from files/folders according to their type..."
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowEncryptCompressedColor" -ErrorAction SilentlyContinue
 }
 
 Function HideSelectCheckboxes {
-	Write-Output "Cache l autocheck sur les installations..."
+	Write-Output "Hide the autocheck on the installations..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "AutoCheckSelect" -Type DWord -Value 0
 }
 
 Function ShowSelectCheckboxes {
-	Write-Output "Affiche l autocheck sur les installations..."
+	Write-Output "Show the autocheck on the installations..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "AutoCheckSelect" -Type DWord -Value 1
 }
 
 Function HideSyncNotifications {
-	Write-Output "Cache les notifications de synchronisation..."
+	Write-Output "Hide synchronization notifications..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSyncProviderNotifications" -Type DWord -Value 0
 }
 
 Function ShowSyncNotifications {
-	Write-Output "Affiche les notifications de synchronisation..."
+	Write-Output "Show synchronization notifications..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSyncProviderNotifications" -Type DWord -Value 1
 }
 
 Function HideRecentShortcuts {
-	Write-Output "Cache les apps utilisees recemment..."
+	Write-Output "Hide recently used apps..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShowRecent" -Type DWord -Value 0
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShowFrequent" -Type DWord -Value 0
 }
 
 Function ShowRecentShortcuts {
-	Write-Output "Affiche les apps utilisees recemment..."
+	Write-Output "Show recently used apps..."
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShowRecent" -ErrorAction SilentlyContinue
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShowFrequent" -ErrorAction SilentlyContinue
 }
 
 Function HideQuickAccess {
-	Write-Output "Cache l Acces rapide au lieu de Ce PC"
+	Write-Output "Hide the Quick Access instead of This PC"
 	Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "HubMode" -Type DWord -Value 1
 }
 
 Function ShowQuickAccess {
-	Write-Output "Affiche Acces Rapide au lieu de Ce Pc..."
+	Write-Output "Show the Quick Access instead of This PC..."
 	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "HubMode" -ErrorAction SilentlyContinue
 }
 
 Function HideRecycleBinFromDesktop {
-	Write-Output "Cache la poubelle sur le bureau..."
+	Write-Output "Hide the trash can on the desk..."
 	If (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu")) {
 		New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu" -Force | Out-Null
 	}
@@ -1740,38 +1740,38 @@ Function HideRecycleBinFromDesktop {
 }
 
 Function ShowRecycleBinOnDesktop {
-	Write-Output "Affiche la poubelle sur le bureau..."
+	Write-Output "Show the trash can on the desk..."
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu" -Name "{645FF040-5081-101B-9F08-00AA002F954E}" -ErrorAction SilentlyContinue
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -Name "{645FF040-5081-101B-9F08-00AA002F954E}" -ErrorAction SilentlyContinue
 }
 
 Function DisableThumbnails {
-	Write-Output "Desactive les miniatures des fichiers/dossiers..."
+	Write-Output "Disables file/folder thumbnails..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "IconsOnly" -Type DWord -Value 1
 }
 
 Function EnableThumbnails {
-	Write-Output "Active les miniatures des fichiers/dossiers..."
+	Write-Output "Enable file/folder thumbnails..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "IconsOnly" -Type DWord -Value 0
 }
 
 Function DisableThumbnailCache {
-	Write-Output "Desactive la creation d un cache pour les miniatures d apps/fichiers/dossiers..."
+	Write-Output "Disables the creation of a cache for app/file/folder thumbnails..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "DisableThumbnailCache" -Type DWord -Value 1
 }
 
 Function EnableThumbnailCache {
-	Write-Output "Active la creation d un cache pour les miniatures d apps/fichiers/dossiers..."
+	Write-Output "Enables the creation of a cache for app/file/folder thumbnails..."
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "DisableThumbnailCache" -ErrorAction SilentlyContinue
 }
 
 Function DisableThumbsDBOnNetwork {
-	Write-Output "Desactive la creation d un cache pour les miniatures d apps/fichiers/dossiers sur le reseaux..."
+	Write-Output "Disables caching of app/file/folder thumbnails on the network..."
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "DisableThumbsDBOnNetworkFolders" -Type DWord -Value 1
 }
 
 Function EnableThumbsDBOnNetwork {
-	Write-Output "Active la creation d un cache pour les miniatures d apps/fichiers/dossiers sur le reseaux..."
+	Write-Output "Enables the creation of a cache for app/file/folder thumbnails on the network..."
 	Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "DisableThumbsDBOnNetworkFolders" -ErrorAction SilentlyContinue
 }
 
@@ -1785,7 +1785,7 @@ Function EnableThumbsDBOnNetwork {
 ##########
 
 Function DisableOneDrive {
-	Write-Output "Desactive OneDrive..."
+	Write-Output "Disable OneDrive..."
 	If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive")) {
 		New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" | Out-Null
 	}
@@ -1793,12 +1793,12 @@ Function DisableOneDrive {
 }
 
 Function EnableOneDrive {
-	Write-Output "Active OneDrive..."
+	Write-Output "Enable OneDrive..."
 	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSyncNGSC" -ErrorAction SilentlyContinue
 }
 
 Function UninstallOneDrive {
-	Write-Output "Desinstallation de OneDrive..."
+	Write-Output "Uninstall de OneDrive..."
 	Stop-Process -Name "OneDrive" -Force -ErrorAction SilentlyContinue
 	Start-Sleep -s 2
 	$onedrive = "$env:SYSTEMROOT\SysWOW64\OneDriveSetup.exe"
@@ -1821,7 +1821,7 @@ Function UninstallOneDrive {
 }
 
 Function InstallOneDrive {
-	Write-Output "Installation de OneDrive..."
+	Write-Output "Install OneDrive..."
 	$onedrive = "$env:SYSTEMROOT\SysWOW64\OneDriveSetup.exe"
 	If (!(Test-Path $onedrive)) {
 		$onedrive = "$env:SYSTEMROOT\System32\OneDriveSetup.exe"
@@ -1830,7 +1830,7 @@ Function InstallOneDrive {
 }
 
 Function UninstallMsftBloat {
-	Write-Output "Desinstallation des apps Windows par defaut..."
+	Write-Output "Uninstall default apps Windows..."
 	Get-AppxPackage "Microsoft.3DBuilder" | Remove-AppxPackage
 	Get-AppxPackage "Microsoft.AppConnector" | Remove-AppxPackage
 	Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage
@@ -1892,7 +1892,7 @@ Function UninstallMsftBloat {
 }
 
 Function InstallMsftBloat {
-	Write-Output "Installation des applications par defaut de Windows..."
+	Write-Output "Install default app Windows..."
 	Get-AppxPackage -AllUsers "Microsoft.3DBuilder" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 	Get-AppxPackage -AllUsers "Microsoft.Advertising.Xaml" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 	Get-AppxPackage -AllUsers "Microsoft.AppConnector" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
@@ -1954,7 +1954,7 @@ Function InstallMsftBloat {
 }
 
 function UninstallThirdPartyBloat {
-	Write-Output "Suppression des apps de but par defaut..."
+	Write-Output "Deleting default apps..."
 	Get-AppxPackage "2414FC7A.Viber" | Remove-AppxPackage
 	Get-AppxPackage "41038Axilesoft.ACGMediaPlayer" | Remove-AppxPackage
 	Get-AppxPackage "46928bounde.EclipseManager" | Remove-AppxPackage
@@ -2004,7 +2004,7 @@ function UninstallThirdPartyBloat {
 
 # Install default third party applications
 Function InstallThirdPartyBloat {
-	Write-Output "Installation des apps de pub par defaut..."
+	Write-Output "Install default app..."
 	Get-AppxPackage -AllUsers "2414FC7A.Viber" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 	Get-AppxPackage -AllUsers "41038Axilesoft.ACGMediaPlayer" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 	Get-AppxPackage -AllUsers "46928bounde.EclipseManager" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
@@ -2053,7 +2053,7 @@ Function InstallThirdPartyBloat {
 }
 
 Function UninstallWindowsStore {
-	Write-Output "Suppression du Windows Store..."
+	Write-Output "Deleting Windows Store..."
 	Get-AppxPackage "Microsoft.DesktopAppInstaller" | Remove-AppxPackage
 	Get-AppxPackage "Microsoft.Services.Store.Engagement" | Remove-AppxPackage
 	Get-AppxPackage "Microsoft.StorePurchaseApp" | Remove-AppxPackage
@@ -2061,7 +2061,7 @@ Function UninstallWindowsStore {
 }
 
 Function InstallWindowsStore {
-	Write-Output "Installation du Windows Store..."
+	Write-Output "Install Windows Store..."
 	Get-AppxPackage -AllUsers "Microsoft.DesktopAppInstaller" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 	Get-AppxPackage -AllUsers "Microsoft.Services.Store.Engagement" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 	Get-AppxPackage -AllUsers "Microsoft.StorePurchaseApp" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
@@ -2069,7 +2069,7 @@ Function InstallWindowsStore {
 }
 
 Function DisableXboxFeatures {
-	Write-Output "Desactivation des Features Xbox..."
+	Write-Output "Disable Features Xbox..."
 	Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage
 	Get-AppxPackage "Microsoft.XboxIdentityProvider" | Remove-AppxPackage -ErrorAction SilentlyContinue
 	Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
@@ -2085,7 +2085,7 @@ Function DisableXboxFeatures {
 }
 
 Function EnableXboxFeatures {
-	Write-Output "Activation des Features Xbox ..."
+	Write-Output "Enable Features Xbox ..."
 	Get-AppxPackage -AllUsers "Microsoft.XboxApp" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 	Get-AppxPackage -AllUsers "Microsoft.XboxIdentityProvider" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 	Get-AppxPackage -AllUsers "Microsoft.XboxSpeechToTextOverlay" | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
@@ -2098,7 +2098,7 @@ Function EnableXboxFeatures {
 }
 
 Function DisableFullscreenOptims {
-	Write-Output "Desactiver les optimisations de plein ecran..."
+	Write-Output "Disable fullscreen optimizations..."
 	Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_DXGIHonorFSEWindowsCompatible" -Type DWord -Value 1
 	Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_FSEBehavior" -Type DWord -Value 2
 	Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_FSEBehaviorMode" -Type DWord -Value 2
@@ -2106,7 +2106,7 @@ Function DisableFullscreenOptims {
 }
 
 Function EnableFullscreenOptims {
-	Write-Output "Active les optimisations de plein ecran..."
+	Write-Output "Enable fullscreen optimizations..."
 	Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_DXGIHonorFSEWindowsCompatible" -Type DWord -Value 0
 	Remove-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_FSEBehavior" -ErrorAction SilentlyContinue
 	Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_FSEBehaviorMode" -Type DWord -Value 0
@@ -2114,7 +2114,7 @@ Function EnableFullscreenOptims {
 }
 
 Function DisableAdobeFlash {
-	Write-Output "Desactive Adobe Flash sur Edge et IE..."
+	Write-Output "Disable Adobe Flash on Edge & IE..."
 	If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer")) {
 		New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer" -Force | Out-Null
 	}
@@ -2126,7 +2126,7 @@ Function DisableAdobeFlash {
 }
 
 Function EnableAdobeFlash {
-	Write-Output "Active Adobe Flash sur Edge et IE..."
+	Write-Output "Enable Adobe Flash on Edge & IE..."
 	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer" -Name "DisableFlashInIE" -ErrorAction SilentlyContinue
 	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Addons" -Name "FlashPlayerEnabled" -ErrorAction SilentlyContinue
 }
