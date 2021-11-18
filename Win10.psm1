@@ -2132,7 +2132,7 @@ Function EnableAdobeFlash {
 }
 
 Function DisableEdgePreload {
-	Write-Output "Desactive les prechargements de ressources sur Edge..."
+	Write-Output "Disable resource preloads on Edge..."
 	If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main")) {
 		New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main" -Force | Out-Null
 	}
@@ -2144,23 +2144,23 @@ Function DisableEdgePreload {
 }
 
 Function EnableEdgePreload {
-	Write-Output "Active les prechargements de ressources sur Edge..."
+	Write-Output "Enable resource preloads on Edge..."
 	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main" -Name "AllowPrelaunch" -ErrorAction SilentlyContinue
 	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\TabPreloader" -Name "AllowTabPreloading" -ErrorAction SilentlyContinue
 }
 
 Function DisableEdgeShortcutCreation {
-	Write-Output "Desactive la creation des raccourcis sur le bureau apres une mise a jour..."
+	Write-Output "Disable creation of desktop shortcuts after an update..."
 	Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "DisableEdgeDesktopShortcutCreation" -Type DWord -Value 1
 }
 
 Function EnableEdgeShortcutCreation {
-	Write-Output "Active la creation des raccourcis sur le bureau apres une mise a jour..."
+	Write-Output "Enable creation of desktop shortcuts after an updater..."
 	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "DisableEdgeDesktopShortcutCreation" -ErrorAction SilentlyContinue
 }
 
 Function DisableIEFirstRun {
-	Write-Output "Desactive la page de premier demarrage de IE..."
+	Write-Output "Disable the IE first startup page..."
 	If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer\Main")) {
 		New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer\Main" -Force | Out-Null
 	}
@@ -2168,22 +2168,22 @@ Function DisableIEFirstRun {
 }
 
 Function EnableIEFirstRun {
-	Write-Output "Active la page de premier demarrage de IE..."
+	Write-Output "Enable the IE first startup page..."
 	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -ErrorAction SilentlyContinue
 }
 
 Function DisableFirstLogonAnimation {
-	Write-Output "Desactive les messages de bienvenu Windows"
+	Write-Output "Disable Windows welcome messages"
 	Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "EnableFirstLogonAnimation" -Type DWord -Value 0
 }
 
 Function EnableFirstLogonAnimation {
-	Write-Output "Active les messages de bienvenu Windows"
+	Write-Output "Enable Windows welcome messagess"
 	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "EnableFirstLogonAnimation" -ErrorAction SilentlyContinue
 }
 
 Function DisableMediaSharing {
-	Write-Output "Desactive le partage de media..."
+	Write-Output "Disable media sharing..."
 	If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer")) {
 		New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer" -Force | Out-Null
 	}
@@ -2191,42 +2191,42 @@ Function DisableMediaSharing {
 }
 
 Function EnableMediaSharing {
-	Write-Output "Active le partage de media..."
+	Write-Output "Enable media sharing..."
 	Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer" -Name "PreventLibrarySharing" -ErrorAction SilentlyContinue
 }
 
 Function UninstallMediaPlayer {
-	Write-Output "Suppression de Windows Media Player..."
+	Write-Output "Removing Windows Media Player..."
 	Disable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart -WarningAction SilentlyContinue | Out-Null
 }
 
 Function InstallMediaPlayer {
-	Write-Output "Installation de Windows Media Player..."
+	Write-Output "Installation of Windows Media Player..."
 	Enable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart -WarningAction SilentlyContinue | Out-Null
 }
 
 Function UninstallInternetExplorer {
-	Write-Output "Desinstallation de Internet Explorer..."
+	Write-Output "Uninstall of Windows Media Player..."
 	Disable-WindowsOptionalFeature -Online -FeatureName "Internet-Explorer-Optional-$env:PROCESSOR_ARCHITECTURE" -NoRestart -WarningAction SilentlyContinue | Out-Null
 }
 
 Function InstallInternetExplorer {
-	Write-Output "Installation de Internet Explorer..."
+	Write-Output "Install Internet Explorer..."
 	Enable-WindowsOptionalFeature -Online -FeatureName "Internet-Explorer-Optional-$env:PROCESSOR_ARCHITECTURE" -NoRestart -WarningAction SilentlyContinue | Out-Null
 }
 
 Function UninstallWorkFolders {
-	Write-Output "Suppression des dossiers de travaux partages"
+	Write-Output "Deleting shared work folders"
 	Disable-WindowsOptionalFeature -Online -FeatureName "WorkFolders-Client" -NoRestart -WarningAction SilentlyContinue | Out-Null
 }
 
 Function InstallWorkFolders {
-	Write-Output "Installation des dossiers de travaux partages"
+	Write-Output "Installation of shared work files"
 	Enable-WindowsOptionalFeature -Online -FeatureName "WorkFolders-Client" -NoRestart -WarningAction SilentlyContinue | Out-Null
 }
 
 Function UninstallPowerShellV2 {
-	Write-Output "Desinstallation de l environnement PowerShell 2.0..."
+	Write-Output "Uninstall PowerShell 2.0 environnement..."
 	If ((Get-CimInstance -Class "Win32_OperatingSystem").ProductType -eq 1) {
 		Disable-WindowsOptionalFeature -Online -FeatureName "MicrosoftWindowsPowerShellV2Root" -NoRestart -WarningAction SilentlyContinue | Out-Null
 	} Else {
@@ -2235,7 +2235,7 @@ Function UninstallPowerShellV2 {
 }
 
 Function InstallPowerShellV2 {
-	Write-Output "Installation de l environnement PowerShell 2.0..."
+	Write-Output "Install PowerShell 2.0 environnement..."
 	If ((Get-CimInstance -Class "Win32_OperatingSystem").ProductType -eq 1) {
 		Enable-WindowsOptionalFeature -Online -FeatureName "MicrosoftWindowsPowerShellV2Root" -NoRestart -WarningAction SilentlyContinue | Out-Null
 	} Else {
@@ -2244,7 +2244,7 @@ Function InstallPowerShellV2 {
 }
 
 Function AddPhotoViewerOpenWith {
-	Write-Output "Ajouter l option 'Ouvrir avec...' sur les photos..."
+	Write-Output "Add the "Open with..." option to photos..."
 	If (!(Test-Path "HKCR:")) {
 		New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT | Out-Null
 	}
@@ -2256,7 +2256,7 @@ Function AddPhotoViewerOpenWith {
 }
 
 Function RemovePhotoViewerOpenWith {
-	Write-Output "Supprime l option 'Ouvrire avec...' sur les photos"
+	Write-Output "Delete the "Open with..." option to photos"
 	If (!(Test-Path "HKCR:")) {
 		New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT | Out-Null
 	}
@@ -2264,22 +2264,22 @@ Function RemovePhotoViewerOpenWith {
 }
 
 Function RemoveFaxPrinter {
-	Write-Output "Suppresion du Fax par defaut..."
+	Write-Output "Default Fax Deletion..."
 	Remove-Printer -Name "Fax" -ErrorAction SilentlyContinue
 }
 
 Function AddFaxPrinter {
-	Write-Output "Ajout du Fax par defaut..."
+	Write-Output "Add Fax by default..."
 	Add-Printer -Name "Fax" -DriverName "Microsoft Shared Fax Driver" -PortName "SHRFAX:" -ErrorAction SilentlyContinue
 }
 
 Function UninstallFaxAndScan {
-	Write-Output "Suppression de la prise en charge des Fax et des Scans nativement..."
+	Write-Output "Removal of native fax and scan support..."
 	Disable-WindowsOptionalFeature -Online -FeatureName "FaxServicesClientPackage" -NoRestart -WarningAction SilentlyContinue | Out-Null
 }
 
 Function InstallFaxAndScan {
-	Write-Output "Installation de la prise en charge des Fax et des Scans nativement..."
+	Write-Output "Installation of native fax and scan support..."
 	Enable-WindowsOptionalFeature -Online -FeatureName "FaxServicesClientPackage" -NoRestart -WarningAction SilentlyContinue | Out-Null
 }
 
