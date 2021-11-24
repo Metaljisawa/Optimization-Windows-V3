@@ -2292,7 +2292,7 @@ Function InstallFaxAndScan {
 ##########
 
 Function UnpinStartMenuTiles {
-	Write-Output "Desepingle les tuiles du menu demarrer"
+	Write-Output "Unpin the tiles in the start menu"
 	If ([System.Environment]::OSVersion.Version.Build -ge 15063 -And [System.Environment]::OSVersion.Version.Build -le 16299) {
 		Get-ChildItem -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\CloudStore\Store\Cache\DefaultAccount" -Include "*.group" -Recurse | ForEach-Object {
 			$data = (Get-ItemProperty -Path "$($_.PsPath)\Current" -Name "Data").Data -Join ","
