@@ -1,5 +1,5 @@
 # OptimizationWindowsV3
-Powershell script for optimizations, tweaks
+Powershell script for optimizations, tweaks & bloatware
 Short script ps1 for remove the unnecessary part on Windows 10.
 
 # Warning !
