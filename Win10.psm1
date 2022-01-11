@@ -1,5 +1,5 @@
 ##########
-# W10 Optimizations
+# W10 Optimizations - adapted by Metaljisawa
 # Source : https://github.com/Disassembler0
 ##########
 
