@@ -42,4 +42,4 @@ While ($i -lt $args.Length) {
 	$i++
 }
 
-
+$tweaks | ForEach-Object { Invoke-Expression $_ }
